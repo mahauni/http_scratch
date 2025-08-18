@@ -59,6 +59,7 @@ func (w *Writer) WriteHeaders(h headers.Headers) error {
 		b = fmt.Appendf(b, "%s: %s\r\n", n, v)
 	})
 
+	b = fmt.Appendf(b, "\r\n")
 	_, err := w.writer.Write(b)
 
 	return err
